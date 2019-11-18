@@ -1,0 +1,78 @@
+.full-height {
+    height: 70vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 00px;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: rgb(141, 199, 63) !important;
+    border-color: rgb(141, 199, 63) !important;
+}
+
+.btn-lg, .btn-group-lg > .btn {
+    padding: px-to-rem(6px) px-to-rem(12px) !important;
+
+    font-size: 1rem !important;
+    min-height: px-to-rem(50px) !important;
+}
+
+.input-lg {
+    line-height: 2.5rem !important;
+}
+
+.text-black {
+    color: rgb(0, 0, 0) !important;
+}
+
+.custom-select-lg {
+    height: 3.5rem !important;
+}
+
+.label-text {
+    font-size: 0.9rem;
+}
+
+.input-lg {
+    height: px-to-rem(50px);
+}
+
+.form-control {
+    margin: auto;
+    height: px-to-rem(50px) !important;
+}

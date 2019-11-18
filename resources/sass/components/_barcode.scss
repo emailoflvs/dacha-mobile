@@ -1,0 +1,21 @@
+.barcode-product-list {
+    height: 90%;
+    max-width: 960px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.barcode-product-item {
+    margin-bottom: 0.5rem;
+
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid $blue;
+    }
+
+}

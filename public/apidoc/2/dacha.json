@@ -1,0 +1,67 @@
+{
+    "info": {
+        "_postman_id": "e8121188-bf9e-4305-a225-8662e98ec808",
+        "name": "Дача без проблем",
+        "description": "API Дача без проблем",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "http://api-dacha.pzdts.ru/api/users/email/login?email=dd@dd.dd&password=12345678",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    },
+                    {
+                        "key": "to",
+                        "value": "ap",
+                        "type": "text",
+                        "disabled": true
+                    },
+                    {
+                        "key": "msg",
+                        "value": "2",
+                        "type": "text",
+                        "disabled": true
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": ""
+                },
+                "url": {
+                    "raw": "http://api-dacha.pzdts.ru/api/users/email/login?email=dd@dd.dd&password=12345678",
+                    "protocol": "http",
+                    "host": [
+                        "api-dacha",
+                        "pzdts",
+                        "ru"
+                    ],
+                    "path": [
+                        "api",
+                        "users",
+                        "email",
+                        "login"
+                    ],
+                    "query": [
+                        {
+                            "key": "email",
+                            "value": "dd@dd.dd"
+                        },
+                        {
+                            "key": "password",
+                            "value": "12345678"
+                        }
+                    ]
+                },
+                "description": "Users email login"
+            },
+            "response": []
+        }
+    ],
+    "protocolProfileBehavior": {}
+}
