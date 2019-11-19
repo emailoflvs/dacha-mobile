@@ -48,10 +48,6 @@ class UserController extends Controller
 
             $api_token = $user->generateToken();
 
-
-//            return response()->json([
-//                'data' => $user->toArray(),
-//            ]);
             return response()->json(['message' => 'User is authorized. api_token=' . $api_token, 'result' => 1], 200);
         } else
             return response()->json(['error' => 'Login problem', 'result' => 2], 200);
@@ -246,8 +242,7 @@ class UserController extends Controller
     /*
      * Удаление пользователя
      * */
-    public
-    function delete($user_id, Request $request)
+    public function delete($user_id, Request $request)
     {
         $user = User::where('id', $user_id)->first();
 
@@ -265,8 +260,7 @@ class UserController extends Controller
     }
 
 
-    protected
-    function sendFailedLoginResponse(Request $request)
+    protected function sendFailedLoginResponse(Request $request)
     {
         $errors = ['error' => trans('auth.failed')];
         return response()->json($errors, 422);

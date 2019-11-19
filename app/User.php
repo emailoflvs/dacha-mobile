@@ -2,12 +2,11 @@
 
 namespace App;
 
-use App\Smsru;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
-use \stdClass;
 use Laravel\Passport\HasApiTokens;
+use stdClass;
 
 
 class User extends Authenticatable
@@ -36,19 +35,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-
-    public function generateToken()
-    {
-        $this->api_token = Str::random(60);
-        $this->save();
-
-        return $this->api_token;
-    }
-
-
+    /*
+     * Отправка СМС с кодом
+     * */
     public function sendCode($phoneNumber)
     {
-
         $smsru = new Smsru(getenv('SMSRU_API_ID'));
         $post = new stdClass();
 
@@ -66,6 +57,17 @@ class User extends Authenticatable
 
         $sms->phone_code = $phone_code;
         return $sms;
+    }
+
+    /*
+    * Генерация токена
+    * */
+    public function generateToken()
+    {
+        $this->api_token = Str::random(60);
+        $this->save();
+
+        return $this->api_token;
     }
 
 

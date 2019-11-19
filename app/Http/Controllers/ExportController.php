@@ -23,17 +23,13 @@ class ExportController extends Controller
     public function export($tableName, $fileType, $productId, $batch = 0)
     {
 
-//        $ExportBarcodes = new ExportBarcodes($tableName, $productId, $batch);
-//        $ExportBarcodes->headings();
-//        return Excel::download($ExportBarcodes, 'barcodes.' . $fileType);
-//        return (new ExportBarcodes($productId))->download('invoices2.csv', \Maatwebsite\Excel\Excel::CSV);
-
-
         return Excel::download(new ExportBarcodes($tableName, $productId, $batch), $tableName . '.' . $fileType);
     }
 
     /*
      * Export кодов в файлы - для API
+     *
+     * @return \Illuminate\Support\Collection
      * */
     public function exportApi(Request $request)
     {
@@ -55,8 +51,6 @@ class ExportController extends Controller
             'result' => 1,
             'filePath' => $filePath
         ];
-//        $url = url("/storage/download/" . $fileName);
-
         return response()->json($result);
 
     }

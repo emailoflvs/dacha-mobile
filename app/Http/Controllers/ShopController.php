@@ -67,6 +67,9 @@ class ShopController extends Controller
         ]);
     }
 
+    /*
+     * Удаление магазина
+     * */
     public function delete($shop_id, Request $request)
     {
         $shop = Shop::where('id', $shop_id)->first();
@@ -87,32 +90,12 @@ class ShopController extends Controller
 
     /*
      * поиск в заданном радиусе , принимает гео-кооординаты текущего места и радиус в метрах
+     *
+     * @param Request $request
      * */
     public function geo(Request $request)
     {
-        $latitude = floatval($request->get('latitude'));
-        $longitude = floatval($request->get('longitude'));
-        $radius = floatval($request->get('radius'));
-
-        $unitOfMeasurement = $request->get('unit_of_measurement', 'kilometers');
-
-        if ('meters' === $unitOfMeasurement) {
-            $radius /= 1000;
-        }
-
-        $boundingBox = (new GeoPoint($latitude, $longitude))
-            ->boundingBox($radius, 'kilometers');
-
-        $latMax = $boundingBox->getMaxLatitude();
-        $latMin = $boundingBox->getMinLatitude();
-        $lonMax = $boundingBox->getMaxLongitude();
-        $lonMin = $boundingBox->getMinLongitude();
-
-        $shops = Shop::whereBetween('latitude', [$latMin, $latMax])
-            ->whereBetween('longitude', [$lonMin, $lonMax])
-//            ->andWhere('longitude', [$lonMin, $lonMax])
-            ->get();
-
+        $shops = $this->geo($request);
 
         return response()->json(['shops' => $shops, 'result' => 1]);
     }
