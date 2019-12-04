@@ -12,6 +12,11 @@ class Shop extends Model
     use Notifiable, Searchable;
 
     protected $table = 'shops';
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
         'address',
         'phone',
@@ -31,6 +36,7 @@ class Shop extends Model
 
     /*
      * Поиск магазинов в указанном месте и радиусе
+     *
      * */
     public function geo(Request $request)
     {

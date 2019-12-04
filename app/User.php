@@ -37,6 +37,9 @@ class User extends Authenticatable
 
     /*
      * Отправка СМС с кодом
+     *
+     * @param $phoneNumber
+     * @return $string
      * */
     public function sendCode($phoneNumber)
     {
@@ -61,6 +64,8 @@ class User extends Authenticatable
 
     /*
     * Генерация токена
+    *
+    * @return $string
     * */
     public function generateToken()
     {

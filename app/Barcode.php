@@ -29,10 +29,11 @@ class Barcode extends Model
 
     /*
     * Функция генерации кодов и добавления их в базу
+     *
+     * @return $string
     * */
     public function generate(Request $request)
     {
-
         // максимально разрешенное кол-во кодов для хранения в базе
         $maxBarcodesCount = 999999;
 
@@ -116,8 +117,10 @@ class Barcode extends Model
 
 
     /*
- * Создает код по алгоритму
- * */
+    * Создает код по алгоритму
+     *
+     * @return $string
+    * */
     protected function getBarcodeByAlgorithm()
     {
 //        •	первые две цифры образуются из года выпуска данного товара.
@@ -143,7 +146,11 @@ class Barcode extends Model
         return $unique;
     }
 
-
+    /*
+     * @param $time
+     *
+     * @return $string
+     * */
     public function formatTime($time)
     {
         $created_at = $time;

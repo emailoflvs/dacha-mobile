@@ -33,6 +33,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('/users/logout', 'UserController@logout');
 });
 
+
 /**
  * Users
  */
