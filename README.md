@@ -1,8 +1,8 @@
-# Работа с мобильным приложением, используя REST API и web система для проверки работы.
+# Working with a mobile application using the REST API and web system to test the work.
 
-Собрано приложение на Larаvel 6.
-Документация для работы с REST есть в Apidoc
+The application was built on Lavel 6.
+Documentation for working with REST is in Apidoc
 
-Авторизация изначально ставилась Laravel, но потом для rest поставил bearer-header
+Authorization was originally set by Laravel, but then I set bearer-header for rest
 
-В контроллерах много кода и не все еще сделано красиво, т.к. проект был неожиданно закрыт.
+There is a lot of code in the controllers and not everything is done beautifully yet, because. the project was unexpectedly closed.
